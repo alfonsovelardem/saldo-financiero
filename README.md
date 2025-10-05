@@ -7,33 +7,33 @@ Algoritmo para calcular un saldo financiero en base a una lista de transacciones
 
 ## Casos de prueba.
 
-### Caso 1: Transacciones Mixtas (Flujo Estándar)
+### Caso 1: Transacciones Mixtas
 
 Este caso valida que la suma de ingresos y la resta de egresos funcionen correctamente.
 
     Entrada:
-    ```json
+    json
     {
         "datos": [
-              {"id": 1, "monto": 100, "tipo": "ingreso"},
+             {"id": 1, "monto": 100, "tipo": "ingreso"},
              {"id": 2, "monto": 50, "tipo": "egreso"},
              {"id": 3, "monto": 200, "tipo": "ingreso"}
         ]
     }
-    ```
-    Saldo Final Esperado: **250** ($\leftarrow 0 + 100 - 50 + 200$)
+    
+    Saldo Final Esperado: **$250** ( 0 + 100 - 50 + 200$)
 
-### Caso 2: Lista Vacía (Robustez)
+### Caso 2: Lista Vacía
 
-Este caso valida la robustez del algoritmo al manejar una lista de transacciones sin datos.
+Sin datos
 
     Entrada:
-    ```json
+    json
     {
         "datos": []
     }
-    ```
-    Saldo Final Esperado: **0** ($\leftarrow$ Retorna el saldo inicial por validación de lista vacía)
+    
+    Saldo Final Esperado: **$0** (Retorna el saldo inicial por validación de lista vacía)
 
 ### Caso 1
 
