@@ -1,0 +1,29 @@
+
+FUNCION calcular_saldo_final(json_transacciones)
+
+    saldo_actual = 0
+
+    SI NO json_transacciones.datos O TAMANO(json_transacciones.datos) ES IGUAL A 0 ENTONCES
+        RETORNAR saldo_actual
+    FIN SI
+
+    PARA CADA transaccion EN json_transacciones.datos HACER
+
+        SI transaccion.monto Y transaccion.tipo ENTONCES
+
+            monto = transaccion.monto
+            tipo = transaccion.tipo
+
+            SI tipo ES IGUAL 'ingreso' ENTONCES
+                saldo_actual = saldo_actual + monto
+            SINO SI tipo ES IGUAL A 'egreso' ENTONCES
+                saldo_actual = saldo_actual - monto
+            FIN SI
+
+        FIN SI
+
+    FIN PARA
+
+    RETORNAR saldo_actual
+
+FIN FUNCION
