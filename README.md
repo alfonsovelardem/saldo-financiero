@@ -3,15 +3,15 @@ Algoritmo para calcular un saldo financiero en base a una lista de transacciones
 
 ### Descripcion del algoritmo
 
-El algoritmo está diseñado para procesar una lista de transacciones y calcular el saldo final en una unica iteracion.
+El algoritmo está diseñado para procesar una lista de transacciones y calcular el saldo final.
 
 1.  **Inicialización y Validación:**
     * El proceso inicia el **`saldo_actual`** en **0**.
-    * Se realiza una validación inicial para asegurar que la clave `"datos"` exista y no esté vacía. Si no hay datos, se retorna el saldo inicial (0).
+    * Se realiza una validación inicial para asegurar que la clave `"datos"` exista y no esté vacía. Si no hay datos, se retorna el saldo inicial que es 0.
 
 2.  **Iteración :**
-    * Se utiliza un único bucle (`PARA CADA`) para recorrer todas las transacciones.
-    * Dentro del bucle, se comprueba que cada transacción contenga los campos críticos (`monto` y `tipo`). Las transacciones mal formadas son ignoradas para evitar errores.
+    * Se utiliza un único bucle para recorrer todas las transacciones.
+    * Dentro del bucle, se comprueba que cada transacción contenga los campos (`monto` y `tipo`). Las transacciones mal formadas son ignoradas para evitar errores.
 
 3.  **Lógica de Acumulación:**
     * Si el `tipo` es **`"ingreso"`**, el `monto` se **suma** al saldo.
@@ -33,29 +33,29 @@ El algoritmo está diseñado para procesar una lista de transacciones y calcular
 
 Este caso valida que la suma de ingresos y la resta de egresos funcionen correctamente.
 
-    Entrada:
-    json
-    {
-        "datos": [
-             {"id": 1, "monto": 100, "tipo": "ingreso"},
-             {"id": 2, "monto": 50, "tipo": "egreso"},
-             {"id": 3, "monto": 200, "tipo": "ingreso"}
-        ]
-    }
-    
-    Saldo Final Esperado: **$250** ( 0 + 100 - 50 + 200$)
+Entrada:
 
+json
+{
+    "datos": [
+        {"id": 1, "monto": 100, "tipo": "ingreso"},
+        {"id": 2, "monto": 50, "tipo": "egreso"},
+        {"id": 3, "monto": 200, "tipo": "ingreso"}
+    ]
+}
+
+Saldo Final Esperado: **$250** ( 0 + 100 - 50 + 200$)
 ### Caso 2: Lista Vacía
 
 Sin datos
 
-    Entrada:
-    json
-    {
-        "datos": []
-    }
-    
-    Saldo Final Esperado: **$0** (Retorna el saldo inicial por validación de lista vacía)
+Entrada:
+json
+{
+    "datos": []
+}
+
+Saldo Final Esperado: **$0** (Retorna el saldo inicial por validación de lista vacía)
 
 ### Archivos del Pseudocodigo
 

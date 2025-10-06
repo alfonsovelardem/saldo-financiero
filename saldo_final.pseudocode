@@ -1,4 +1,3 @@
-
 FUNCION calcular_saldo_final(json_transacciones)
 
     saldo_actual = 0
