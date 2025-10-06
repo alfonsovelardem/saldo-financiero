@@ -33,29 +33,29 @@ El algoritmo está diseñado para procesar una lista de transacciones y calcular
 
 Este caso valida que la suma de ingresos y la resta de egresos funcionen correctamente.
 
-Entrada:
+    Entrada:
+    json
+    {
+        "datos": [
+             {"id": 1, "monto": 100, "tipo": "ingreso"},
+             {"id": 2, "monto": 50, "tipo": "egreso"},
+             {"id": 3, "monto": 200, "tipo": "ingreso"}
+        ]
+    }
+    
+    Saldo Final Esperado: **$250** ( 0 + 100 - 50 + 200$)
 
-json
-{
-    "datos": [
-        {"id": 1, "monto": 100, "tipo": "ingreso"},
-        {"id": 2, "monto": 50, "tipo": "egreso"},
-        {"id": 3, "monto": 200, "tipo": "ingreso"}
-    ]
-}
-
-Saldo Final Esperado: **$250** ( 0 + 100 - 50 + 200$)
 ### Caso 2: Lista Vacía
 
 Sin datos
 
-Entrada:
-json
-{
-    "datos": []
-}
-
-Saldo Final Esperado: **$0** (Retorna el saldo inicial por validación de lista vacía)
+    Entrada:
+    json
+    {
+        "datos": []
+    }
+    
+    Saldo Final Esperado: **$0** (Retorna el saldo inicial por validación de lista vacía)
 
 ### Archivos del Pseudocodigo
 
